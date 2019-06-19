@@ -95,6 +95,14 @@ $(document).ready(function(){
 				<td><label for="email">이메일</label></td>
 				<td><input type="text" name="email" th:value = "${obj.email}"></td>
 			</tr>
+				<tr>
+			<td>취미</td>
+			<td th:text="radio"="${obj.hobby}"></td>
+			<option>농구</option>
+			<option>축구</option>
+			<option>피구</option>
+			<option>야구</option>
+		</tr>
 			<tr>
 				<td><label for="group">소속</label></td>
 				<td><input type="text" name="group" th:value = "${obj.group}"></td>
