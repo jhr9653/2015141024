@@ -125,4 +125,29 @@ public class HeloController {
 		mav.addObject("datalist", list);
 		return mav;
 	}
+	/**
+	 *
+	 * @fn 		public ModelAndView removecheck(ModelAndView mav)
+	 * 
+	 * @brief 	삭제 유무 확인페이지
+	 *
+	 * @author 	지하람
+	 * @date 	2019-06-20
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark	findBy 를 이용한 조건검색 후 삭제 유무 확인페이지 출력	[2019-06-20; 지하람] \n
+	 *
+	 */
+
+	@RequestMapping(value = /delete/{id}, method = RequestMethod.GET)
+	public ModelAndView removecheck(@PathVariable("id") String id, ModelAndView mav) {
+		mav.setViewName("delete");
+		mav.addObject("title", "Delete Page");
+		mav.addObject("msg", "삭제 유무 확인");
+
+		List<MyDataMongo> list = repository.findById(id);
+		mav.addObject("datalist", list);
+		return mav;
+	}
 }
