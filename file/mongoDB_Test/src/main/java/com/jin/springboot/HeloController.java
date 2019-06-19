@@ -91,6 +91,7 @@ public class HeloController {
 			@RequestParam("name") String name,
 			@RequestParam("phone") int phone, 
 			@RequestParam("email") String email,
+			@RequestParam("group") String group,
 			@RequestParam("memo") String memo,
 			ModelAndView mov) 
 	{
