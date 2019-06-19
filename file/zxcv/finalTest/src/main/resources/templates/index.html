@@ -44,7 +44,9 @@ table.navi tr {
 table.navi tr td {
 	background: white;
 }
-
+.width {
+	width: 200px;
+}
 .err {
 	color: red;
 }
@@ -55,9 +57,8 @@ table.navi tr td {
 </style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
-	<p th:text="${msg}"></p>
-	<a th:href="@{'/insert'}">연락처 등록</a>
+	<h1>주소록 조회</h1>
+	<a th:href="@{'/insert'}">주소록 등록</a>
 	<p>
 	<table>
 		<form method="post" action="/">
@@ -66,13 +67,15 @@ table.navi tr td {
 			<th>이름</th>
 			<th>전화번호</th>
 			<th>이메일</th>
-			<th>소속</th>
 		</tr>
 		<tr th:each="obj : ${datalist}">
 			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.name}"></span></a></td>
-			<td><span th:text="${obj.phone1}"></span> - <span th:text="${obj.phone2}"></span> - <span th:text="${obj.phone3}"></span></td>
+			<td>
+				<font th:text="${obj.phone1}"></font> -
+				<font th:text="${obj.phone2}"></font> -
+				<font th:text="${obj.phone3}"></font>
+			</td>
 			<td><span th:text="${obj.email}"></span></td>
-			<td><span th:text="${obj.group}"></span></td>
 		</tr>
 		</form>
 	</table>

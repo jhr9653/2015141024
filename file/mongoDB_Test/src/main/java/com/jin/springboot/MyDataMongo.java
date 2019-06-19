@@ -85,7 +85,7 @@ public class MyDataMongo {
 		this.email = email;
 	}
 
-	public String getgroup() {
+	public String getGroup() {
 		return group;
 	}
 

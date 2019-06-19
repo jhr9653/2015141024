@@ -52,11 +52,9 @@ table.navi tr td {
 
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
-	<p th:text="${msg}"></p>
-
+	<h1> 주소록 상세정보</h1>
 	<table th:each="obj : ${datalist}">
-		<form method="post" action="/detail">
+		<form method="post" action="/detail/{id}">
 			<input type="hidden" th:value="${obj.id}" />
 		<tr>
 			<td>이름</td>
@@ -65,9 +63,9 @@ table.navi tr td {
 		<tr>
 			<td>전화번호</td>
 			<td>
-			<font th:text="${obj.phone1}"></font>-
-			<font th:text="${obj.phone2}"></font>-
-			<font th:text="${obj.phone3}"></font>-
+				<font th:text="${obj.phone1}"></font> -
+				<font th:text="${obj.phone2}"></font> -
+				<font th:text="${obj.phone3}"></font>
 			</td>
 		</tr>
 		<tr>
@@ -75,15 +73,12 @@ table.navi tr td {
 			<td th:text="${obj.email}"></td>
 		</tr>
 		<tr>
-			<td>소속</td>
-			<td th:text="${obj.group}"></td>
-		</tr>
-		<tr>
 			<td>메모</td>
 			<td th:text="${obj.memo}"></td>
 		</tr>
-			<td>작성날짜</td>
-			<td th:text="${obj.date}"></td>
+		<tr>
+			<td>가입날짜</td>
+			<td th:text="${obj.registerDate}"></td>
 		</tr>
 		</form>
 		<tr>
@@ -97,7 +92,7 @@ table.navi tr td {
 		<tr>
 			<td colspan="2">
 				<center>
-					<a th:href="@{'/'}"><button>목록으로</button></a>
+					<a th:href="@{'/'}"><button>목록</button></a>
 				</center>
 			</td>
 		</tr>
