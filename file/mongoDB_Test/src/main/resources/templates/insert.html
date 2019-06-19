@@ -2,20 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>top page</title>
+<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+	$(document).ready(function (event) { 
+		// keyup() : 키를 입력했을 때, 발생하는 이벤트 처리.
+		$('textarea').keyup(function () {
+			// 남은 글자 수를 구합니다.
+			var inputLength = $(this).val().length;
+			var remain = 150 - inputLength;
+			//문서 객체에 입력 합니다.
+			$('h2').html(remain);
+			if(remain<0)
+				{
+				$('h2').css("color","red");
+				}
+		});
+	});
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style>
 h1 {
 	font-size: 18pt;
 	font-weight: bold;
-	color: gray;
+	color: blue;
 }
-
+h2 {
+	fint-size: 15pt;
+	font-weight: bold;
+	color: black;
+}
 body {
 	font-size: 13pt;
-	color: gray;
+	color: white;
 	margin: 5px 25px;
 }
-
 tr {
 	margin: 5px;
 }
@@ -23,7 +43,7 @@ tr {
 th {
 	padding: 5px;
 	color: white;
-	background: darkgray;
+	background: black;
 }
 
 td {
@@ -48,10 +68,13 @@ table.navi tr td {
 .err {
 	color: red;
 }
+.last {
+	background: black;
+}
 </style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
+	<h1> XXX의 주소록</h1>
 	<p th:text="${msg}"></p>
 	
 	<table>
@@ -62,20 +85,21 @@ table.navi tr td {
 				<td><input type="text" name="name" /></td>
 			</tr>
 			<tr>
-				<td><label for="code">학번</label></td>
-				<td><input type="text" name="code" /></td>
+				<td><label for="phone">전화번호</label></td>
+				<td><input type="text" name="phone" /></td>
 			</tr>
 			<tr>
-				<td><label for="Java">자바</label></td>
-				<td><input type="text" name="Java" /></td>
+				<td><label for="email">이메일</label></td>
+				<td><input type="text" name="email" /></td>
 			</tr>
 			<tr>
-				<td><label for="SpringBoot">스프링부트</label></td>
-				<td><input type="text" name="SpringBoot" /></td>
+				<td><label for="group">소속</label></td>
+				<td><input type="text" name="group" /></td>
 			</tr>
 			<tr>
-				<td><label for="DataBase">데이터베이스</label></td>
-				<td><input type="text" name="DataBase" /></td>
+				<td><label for="memo">메모</label></td>
+				<h2>150</h2>
+				<td><textarea cols="70"rows="5" name="memo"></textarea></td>
 			</tr>
 			<tr>
 				<td></td>
