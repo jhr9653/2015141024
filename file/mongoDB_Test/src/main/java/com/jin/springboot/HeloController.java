@@ -69,4 +69,34 @@ public class HeloController {
 
 		return mav;
 	}
+	/**
+	 *
+	 * @fn 		public ModelAndView insert(ModelAndView mav)
+	 * 
+	 * @brief 	입력 페이지 설정 
+	 *
+	 * @author 	강석진
+	 * @date 	2019-06-20
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark	폼에 입력된 값을 받아온 후 객체에 저장		[2019-06-20; 지하람] \n
+	 *		   	save 메소드를 이용해 DB에 저장			[2019-06-20; 지하람] \n
+	 *
+	 */
+	
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	public ModelAndView form(
+			@RequestParam("id") String id, 
+			@RequestParam("name") String name,
+			@RequestParam("phone") int phone, 
+			@RequestParam("email") String email,
+			@RequestParam("memo") String memo,
+			ModelAndView mov) 
+	{
+		MyDataMongo mydata = new MyDataMongo(name, id, phone, email, group, memo);
+		repository.save(mydata);
+		
+		return new ModelAndView("redirect:/");
+	}
 }
