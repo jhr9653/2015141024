@@ -9,18 +9,21 @@ public class MyDataMongo {
 
 	private String id;
 	private String name;
-	private String phone;
+	private String phone1;
+	private String phone2;
+	private String phone3;
 	private Date date;
-
 	private String email;
 	private String group;
 	private String memo;
 
-	public MyDataMongo(String name, String id, String phone, String email, String group, String memo) {
+	public MyDataMongo(String name, String id, String phone1, String phone2, String phone3 ,String email, String group, String memo) {
 
 		super();
 		this.name = name;
-		this.phone = phone;
+		this.phone1 = phone1;
+		this.phone2 = phone2;
+		this.phone3 = phone3;
 		this.date = new Date();
 		this.id = id;
 		this.email = email;
@@ -45,14 +48,27 @@ public class MyDataMongo {
 		this.name = name;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getPhone1() {
+		return phone1;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPhone1(String phone1) {
+		this.phone1 = phone1;
+	}
+	public String getPhone2() {
+		return phone2;
 	}
 
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
+	}
+	public String getPhone3() {
+		return phone3;
+	}
+
+	public void setPhone3(String phone3) {
+		this.phone3 = phone3;
+	}
 	public Date getDate() {
 		return date;
 	}

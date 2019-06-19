@@ -46,6 +46,7 @@ public class HeloController {
 		return mav;
 	}
 
+	
 	/**
 	 *
 	 * @fn 		public ModelAndView insert(ModelAndView mav)
@@ -69,7 +70,7 @@ public class HeloController {
 
 		return mav;
 	}
-	
+		
 	/**
 	 *
 	 * @fn 		public ModelAndView insert(ModelAndView mav)
@@ -90,18 +91,20 @@ public class HeloController {
 	public ModelAndView form(
 			@RequestParam("id") String id, 
 			@RequestParam("name") String name,
-			@RequestParam("phone") String phone, 
+			@RequestParam("phone1") String phone1, 
+			@RequestParam("phone2") String phone2,
+			@RequestParam("phone3") String phone3,
 			@RequestParam("email") String email,
 			@RequestParam("group") String group,
 			@RequestParam("memo") String memo,
 			ModelAndView mov) 
 	{
-		MyDataMongo mydata = new MyDataMongo(name, id, phone, email, group, memo);
+		MyDataMongo mydata = new MyDataMongo(name, id, phone1,phone2,phone3, email, group, memo);
 		repository.save(mydata);
 		
 		return new ModelAndView("redirect:/");
 	}
-	
+
 	/**
 	 *
 	 * @fn 		public ModelAndView detail(ModelAndView mav)
@@ -127,7 +130,7 @@ public class HeloController {
 		mav.addObject("datalist", list);
 		return mav;
 	}
-	
+
 	/**
 	 *
 	 * @fn 		public ModelAndView removecheck(ModelAndView mav)
@@ -153,7 +156,7 @@ public class HeloController {
 		mav.addObject("datalist", list);
 		return mav;
 	}
-	
+
 	/**
 	 *
 	 * @fn 		public ModelAndView remove(ModelAndView mav)
@@ -174,7 +177,7 @@ public class HeloController {
 		repository.deleteById(id);
 		return new ModelAndView("redirect:/");
 	}
-	
+
 	/**
 	 *
 	 * @fn 		public ModelAndView edit(ModelAndView mav)
@@ -202,6 +205,7 @@ public class HeloController {
 		mav.addObject("datalist", list);
 		return mav;
 	}
+
 	
 	/**
 	 *
@@ -224,16 +228,19 @@ public class HeloController {
 	public ModelAndView editpost(
 			@RequestParam("id") String id, 
 			@RequestParam("name") String name,
-			@RequestParam("phone") String phone, 
+			@RequestParam("phone1") String phone1,
+			@RequestParam("phone2") String phone2,
+			@RequestParam("phone3") String phone3, 
 			@RequestParam("email") String email,
 			@RequestParam("group") String group,
 			@RequestParam("memo") String memo, 
 			ModelAndView mov) 
 	{
-		MyDataMongo mydata = new MyDataMongo(name, id, phone, email, group, memo);
+		MyDataMongo mydata = new MyDataMongo(name, id, phone1,phone2,phone3, email, group, memo);
 		repository.save(mydata);
 		repository.deleteById(id);
 		
 		return new ModelAndView("redirect:/");
 	}
+
 }
