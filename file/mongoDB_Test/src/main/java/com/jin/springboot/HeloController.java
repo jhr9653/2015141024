@@ -150,4 +150,24 @@ public class HeloController {
 		mav.addObject("datalist", list);
 		return mav;
 	}
+	/**
+	 *
+	 * @fn 		public ModelAndView remove(ModelAndView mav)
+	 * 
+	 * @brief 	데이터 삭제
+	 *
+	 * @author 	지하람
+	 * @date 	2019-06-20
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark	deleteBy 를 이용한 데이터 조건삭제	[2019-06-20; 지하람] \n
+	 *
+	 */
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public ModelAndView remove(@RequestParam("id") String id, ModelAndView mav) {
+		repository.deleteById(id);
+		return new ModelAndView("redirect:/");
+	}
 }
