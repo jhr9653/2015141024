@@ -140,7 +140,7 @@ public class HeloController {
 	 *
 	 */
 
-	@RequestMapping(value = /delete/{id}, method = RequestMethod.GET)
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public ModelAndView removecheck(@PathVariable("id") String id, ModelAndView mav) {
 		mav.setViewName("delete");
 		mav.addObject("title", "Delete Page");
