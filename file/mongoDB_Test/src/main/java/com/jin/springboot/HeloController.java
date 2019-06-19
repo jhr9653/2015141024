@@ -90,7 +90,7 @@ public class HeloController {
 	public ModelAndView form(
 			@RequestParam("id") String id, 
 			@RequestParam("name") String name,
-			@RequestParam("phone") int phone, 
+			@RequestParam("phone") String phone, 
 			@RequestParam("email") String email,
 			@RequestParam("group") String group,
 			@RequestParam("memo") String memo,
@@ -224,7 +224,7 @@ public class HeloController {
 	public ModelAndView editpost(
 			@RequestParam("id") String id, 
 			@RequestParam("name") String name,
-			@RequestParam("phone") int phone, 
+			@RequestParam("phone") String phone, 
 			@RequestParam("email") String email,
 			@RequestParam("group") String group,
 			@RequestParam("memo") String memo, 

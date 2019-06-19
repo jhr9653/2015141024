@@ -9,14 +9,14 @@ public class MyDataMongo {
 
 	private String id;
 	private String name;
-	private int phone;
+	private String phone;
 	private Date date;
 
 	private String email;
 	private String group;
 	private String memo;
 
-	public MyDataMongo(String name, String id, int phone, String email, String group, String memo) {
+	public MyDataMongo(String name, String id, String phone, String email, String group, String memo) {
 
 		super();
 		this.name = name;
@@ -45,11 +45,11 @@ public class MyDataMongo {
 		this.name = name;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
