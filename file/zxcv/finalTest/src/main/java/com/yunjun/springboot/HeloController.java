@@ -83,14 +83,15 @@ public class HeloController {
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public ModelAndView form(
-			@RequestParam("name") String name, 
+			@RequestParam("name") String name,
+			@RequestParam("group") String group,
 			@RequestParam("phone1") String phone1,
 			@RequestParam("phone2") String phone2,
 			@RequestParam("phone3") String phone3,
 			@RequestParam("email") String email,
 			@RequestParam("memo") String memo,      
 			ModelAndView mov) {
-		MyDataMongo mydata = new MyDataMongo(name, email, memo, phone1, phone2, phone3);
+		MyDataMongo mydata = new MyDataMongo(name, group, email, memo, phone1, phone2, phone3);
 		repository.save(mydata);
 		
 		return new ModelAndView("redirect:/");
@@ -162,14 +163,15 @@ public class HeloController {
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public ModelAndView editpost(
 			@RequestParam("id") String id, 
-			@RequestParam("name") String name, 
+			@RequestParam("name") String name,
+			@RequestParam("group") String group,
 			@RequestParam("phone1") String phone1,
 			@RequestParam("phone2") String phone2,
 			@RequestParam("phone3") String phone3,
 			@RequestParam("email") String email,
 			@RequestParam("memo") String memo,      
 			ModelAndView mov) {
-		MyDataMongo mydata = new MyDataMongo(name, email, memo, phone1, phone2, phone3);
+		MyDataMongo mydata = new MyDataMongo(name, group, email, memo, phone1, phone2, phone3);
 		repository.save(mydata);
 		repository.deleteById(id);
 		

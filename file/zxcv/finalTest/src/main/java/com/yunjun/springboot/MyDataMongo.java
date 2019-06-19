@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 public class MyDataMongo {
 	@Id
 	private String id; 				
-	
+	private String group;
 	private String name;						
 	private String email;							
 	private String memo;			
@@ -17,9 +17,10 @@ public class MyDataMongo {
 	private Date registerDate;		
 	
 	
-	public MyDataMongo(String name, String email, String memo, 
+	public MyDataMongo(String name, String group , String email, String memo, 
 					   String phone1, String phone2, String phone3) {
 		this.name = name;
+		this.group = group;
 		this.email = email;
 		this.memo = memo;
 		this.phone1 = phone1;
@@ -35,6 +36,14 @@ public class MyDataMongo {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
 	}
 
 	public String getName() {

@@ -67,6 +67,7 @@ table.navi tr td {
 			<th>이름</th>
 			<th>전화번호</th>
 			<th>이메일</th>
+			<th>소속</th>
 		</tr>
 		<tr th:each="obj : ${datalist}">
 			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.name}"></span></a></td>
@@ -76,6 +77,7 @@ table.navi tr td {
 				<font th:text="${obj.phone3}"></font>
 			</td>
 			<td><span th:text="${obj.email}"></span></td>
+			<td><span th:text="${obj.group}"></span></td>
 		</tr>
 		</form>
 	</table>
