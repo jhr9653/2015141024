@@ -77,7 +77,7 @@ public class HeloController {
 	 * 
 	 * @brief 	입력 페이지 설정 
 	 *
-	 * @author 	강석진
+	 * @author 	지하람
 	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView

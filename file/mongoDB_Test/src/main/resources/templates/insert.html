@@ -81,6 +81,10 @@ table.navi tr td {
 		<form method="post" action="/insert">
 		<input type="hidden" name="id" th:value="*{id}" />
 			<tr>
+				<td><label for="id">번호</label></td>
+				<td><input type="text" name="id" /></td>
+			</tr>
+			<tr>
 				<td><label for="name">이름</label></td>
 				<td><input type="text" name="name" /></td>
 			</tr>
